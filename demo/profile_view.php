@@ -1,0 +1,1 @@
+<p>Welcome back <?php echo($user) ?>! Here's your profile bar.</p>
