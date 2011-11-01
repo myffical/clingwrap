@@ -74,16 +74,19 @@ class TemplateManager{
     }
   }
   
+  function render_base_to_string(){
+    ob_start();
+    $this->render_base();
+    $output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+  }
   /**
     * Renders the template registered under the given key.
     *
     * @param string $key - Key of the template to render
     */  
   function render($key){
-    function render($key){
-      $this->render($key
-    }
-
     if($this->templates[$key]){
       $params = $this->templates[$key]->get_params();
       foreach($params as $param_key => $param_value){
